@@ -33,7 +33,7 @@ else{%>
 <%} %>
 <td><%=cou.getTea_score()%></td>
 <td><%=cou.getTea_evaluation()%></td>
-<td><%=cou.getStu_id()%></td>
+
 </tr>
 <%} }%>
 </table>
