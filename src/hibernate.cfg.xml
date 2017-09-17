@@ -1,0 +1,26 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+	<session-factory>
+		<property name="show_sql">true</property>
+		<!-- 配置数据库连接信息 -->
+		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/cms</property>
+		
+		<property name="hibernate.connection.username">root</property>
+		<property name="hibernate.connection.password">root</property>
+		<!-- 数据库方言 -->
+		<property name="hibernate.dialect">org.hibernate.dialect.MySQL5InnoDBDialect</property>
+		<mapping resource="cn/mysql/project/admin.hbm.xml" />
+		<mapping resource="cn/mysql/project/course.hbm.xml" />
+		<mapping resource="cn/mysql/project/courseware.hbm.xml" />
+		<mapping resource="cn/mysql/project/scourse.hbm.xml" />
+		<mapping resource="cn/mysql/project/Shomework.hbm.xml" />
+		<mapping resource="cn/mysql/project/Student.hbm.xml" />
+			<mapping resource="cn/mysql/project/Tea.hbm.xml" />
+		<mapping resource="cn/mysql/project/teaHomework.hbm.xml" />
+		
+	</session-factory>
+</hibernate-configuration>

@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+	<class name="cn.mysql.project.Shomework" table="stu_homework">
+		<id name="homework_no">
+			<!-- ?????????? -->
+			<generator class="assigned"></generator>
+		</id>
+		<property name="stu_id"/>
+		<property name="status"/>
+		<property name="grade"/>
+		<property name="opinion"/>
+		<property name="course_no"/>
+	</class>
+
+</hibernate-mapping>

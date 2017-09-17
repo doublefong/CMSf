@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+	<class name="cn.mysql.project.Scourse" table="scourse">
+		<id name="course_no">
+			<generator class="assigned"></generator>
+		</id>
+		<property name="stu_id"/>
+		<property name="stu_grade"/>
+		<property name="tea_evaluation"/>
+		<property name="tea_score"/>
+		<property name="title"/>
+	</class>
+
+</hibernate-mapping>
