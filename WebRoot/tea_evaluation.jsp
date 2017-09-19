@@ -2,6 +2,8 @@
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+String cno=request.getParameter("cno");
+String sid=request.getParameter("sid");
 %>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
@@ -23,14 +25,18 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
 
   <body>
-<form action="action/tea_evaluation.jsp" method="post">
+<form action="action/info_modify.jsp" method="post">
 <table align="center"width="450"height="260"border="1">
 <tr>
      <td align="center" colspan="2" height="40">
-          <b>评教</b>
-      </td>
+课号：<input type="text" width="5" name="cno"value="<%=cno %>">
+</td>
 </tr>
 <tr>
+     <td align="center" colspan="2" height="40">
+学号：<input type="text" width="5" name="sid"value="<%=sid%>">
+</td>
+</tr>
       <td> 内容:</td>     
       <td><textarea name="tea_evaluation"rows="14"cols="40"></textarea>  </td>
 
