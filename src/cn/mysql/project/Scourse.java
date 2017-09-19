@@ -2,6 +2,7 @@ package cn.mysql.project;
 
 import java.util.List;
 
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -98,5 +99,44 @@ List<Scourse>list = session.createQuery("from Scourse b where course_no=?").setI
 tx.commit();
 session.close();
  return list;
+}
+public void modify(int sid,int cno,String grade)
+{
+	Configuration cfg=new Configuration().configure();
+
+	ServiceRegistry sr = new StandardServiceRegistryBuilder()
+							.applySettings(cfg.getProperties())
+							.build();
+	SessionFactory sf = cfg.buildSessionFactory(sr);
+	Session session = sf.openSession();
+	Transaction tx = session.beginTransaction();
+	Query query=session.createQuery("update Scourse cou set cou.stu_grade=:grade where cou.stu_id=:sid and course_no=:cno");
+	query.setString("grade", grade);
+	query.setInteger("cno",cno);
+	query.setInteger("sid",sid);
+	query.executeUpdate();
+query.executeUpdate();
+	tx.commit();
+	session.close();
+}
+public void modify2(int sid,int cno,String score,String evaluation)
+{
+	Configuration cfg=new Configuration().configure();
+
+	ServiceRegistry sr = new StandardServiceRegistryBuilder()
+							.applySettings(cfg.getProperties())
+							.build();
+	SessionFactory sf = cfg.buildSessionFactory(sr);
+	Session session = sf.openSession();
+	Transaction tx = session.beginTransaction();
+	Query query=session.createQuery("update Scourse cou set cou.tea_evaluation=:evaluation,cou.tea_score=:score where cou.stu_id=:sid and course_no=:cno");
+	query.setString("evaluation",evaluation );
+	query.setString("score",score );
+	query.setInteger("cno",cno);
+	query.setInteger("sid",sid);
+	query.executeUpdate();
+query.executeUpdate();
+	tx.commit();
+	session.close();
 }
 }
