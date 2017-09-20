@@ -26,7 +26,7 @@ List<course>list=cou.course_list(Id);
 
 <td><a href="action/Tea_cou.jsp?cno=<%=c.getCourse_no()%>">查看课件</a></td>
 <td><a href="action/Tea_cou.jsp?cno=<%=c.getCourse_no()%>">查看作业信息</a></td>
-<td><a href="cou_infolist.jsp?cno=<%=c.getCourse_no()%>">查看教学信息</a></td><!-- grade evaluation -->
+<td><a href="cou_infolist.jsp?cno=<%=c.getCourse_no()%>&tid=<%=tea_id%>">查看教学信息</a></td><!-- grade evaluation -->
 </tr>
 <%} %>
 </table>

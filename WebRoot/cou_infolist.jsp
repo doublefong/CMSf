@@ -3,7 +3,8 @@
 Scourse info=new Scourse();
 String cno=request.getParameter("cno");
 String sid=request.getParameter("sid");
-if(cno!=null)
+String tid=request.getParameter("tid");
+if(tid!=null)
 {
 int Id=Integer.valueOf(cno).intValue();
 List<Scourse>list=info.Tinfo_list(Id);
